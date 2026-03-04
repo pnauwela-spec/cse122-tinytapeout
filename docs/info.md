@@ -13,8 +13,8 @@ Telecommunications uses a standard called DS0. It runs at 64kbps and is a method
 
 ## How to test
 
-Explain how to use your project
+This is too small to create a proper circuit for DS0, so this project simply creates the 64kHz clock and performs bit shifting. This is an 8 bit shift register that represents shifting frames for incoming DS0 data. 
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+There is no external hardware attached to this project. 
