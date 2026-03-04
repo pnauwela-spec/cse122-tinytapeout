@@ -39,7 +39,8 @@ module tt_um_pnauwela_ds0 (
 	reg		  serial_out;
 
 	assign uo_out[0] = serial_out;
-	assign uo_out[7:1] = 7'b0;
+	assign uo_out[1] = bit_tick;
+	assign uo_out[7:2] = 6'b0;
 
 	always @(posedge clk or negedge rst_n) begin
 		if (!rst_n) begin 
@@ -49,11 +50,11 @@ module tt_um_pnauwela_ds0 (
 		end else if (bit_tick) begin
 			if(bit_cnt == 3'd0) begin 
 				shift_reg <= ui_in;
+				serial_out <= ui_in[7];
 			end else begin
 				shift_reg <= {shift_reg[6:0], 1'b0};
+				serial_out <= shift_reg[6];
 			end
-
-			serial_out <= shift_reg[7];
 			bit_cnt <= bit_cnt + 1;
 
 		end
