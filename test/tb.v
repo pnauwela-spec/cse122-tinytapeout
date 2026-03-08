@@ -19,7 +19,7 @@ module tb_ds0 ();
   	reg [7:0] ui_in;
   	wire [7:0] uo_out;
 	wire [7:0] uio_oe;
-	wire [7:0] uio;
+	wire [7:0] uio_out;
 	wire [7:0] uio_in;
 `ifdef GL_TEST
   	wire VPWR = 1'b1;
@@ -40,7 +40,7 @@ module tb_ds0 ();
     	tt_um_pnauwela_ds0 dut (
         	.ui_in(ui_in),
         	.uo_out(uo_out),
-			.uio(uio),
+			.uio_out(uio_out),
 			.uio_oe(uio_oe),
 			.uio_in(uio_in),
         	.clk(clk),
@@ -53,7 +53,7 @@ module tb_ds0 ();
     	tt_um_pnauwela_ds0 dut (
         	.ui_in(ui_in),
         	.uo_out(uo_out),
-			.uio(uio),
+			.uio_out(uio_out),
 			.uio_oe(uio_oe),
 			.uio_in(uio_in),
         	.clk(clk),

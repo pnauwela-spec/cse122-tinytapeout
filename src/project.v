@@ -9,7 +9,7 @@ module tt_um_pnauwela_ds0 (
     input  wire [7:0] ui_in,   // Dedicated inputs
     output wire [7:0] uo_out,  // Dedicated outputs
 	input  wire [7:0] uio_in,
-	input  wire [7:0] uio,
+	output wire [7:0] uio_out,
 	output wire [7:0] uio_oe,
     input  wire       clk,     // clock
     input  wire       rst_n,    // reset_n - low to reset
@@ -21,7 +21,7 @@ module tt_um_pnauwela_ds0 (
 	reg [8:0] clk_div;
 	reg 	  bit_tick;
 
-	assign uio = 8'b0;
+	assign uio_out = 8'b0;
 	assign uio_oe = 8'b0;
 	assign uio_in = 8'b0;
 
