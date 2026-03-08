@@ -16,10 +16,11 @@ module tb_ds0 ();
   	reg clk;
   	reg rst_n;
 	reg ena;
-  	reg [7:0] ui_in;
+  	wire [7:0] ui_in;
   	wire [7:0] uo_out;
 	wire [7:0] uio_oe;
 	wire [7:0] uio;
+	wire [7:0] uio_in;
 `ifdef GL_TEST
   	wire VPWR = 1'b1;
   	wire VGND = 1'b0;
@@ -41,6 +42,7 @@ module tb_ds0 ();
         	.uo_out(uo_out),
 			.uio(uio),
 			.uio(uio_oe),
+			.uio(uio_in),
         	.clk(clk),
         	.rst_n(rst_n),
 			.ena(ena),
@@ -53,6 +55,7 @@ module tb_ds0 ();
         	.uo_out(uo_out),
 			.uio(uio),
 			.uio_oe(uio_oe),
+			.uio(uio_in),
         	.clk(clk),
         	.rst_n(rst_n)
     	);

@@ -8,6 +8,7 @@
 module tt_um_pnauwela_ds0 (
     input  wire [7:0] ui_in,   // Dedicated inputs
     output wire [7:0] uo_out,  // Dedicated outputs
+	input  wire [7:0] uio_in,
 	input  wire [7:0] uio,
 	output wire [7:0] uio_oe,
     input  wire       clk,     // clock
@@ -22,6 +23,7 @@ module tt_um_pnauwela_ds0 (
 
 	assign uio = 8'b0;
 	assign uio_oe = 8'b0;
+	assign uio_in = 8'b0;
 
 	always @(posedge clk or negedge rst_n) begin 
 		if (!rst_n) begin
