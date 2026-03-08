@@ -21,7 +21,7 @@ module tt_um_pnauwela_ds0 (
 	reg 	  bit_tick;
 
 	assign uio = 8'b0;
-	assign uio_oe 8'b0;
+	assign uio_oe = 8'b0;
 
 	always @(posedge clk or negedge rst_n) begin 
 		if (!rst_n) begin
