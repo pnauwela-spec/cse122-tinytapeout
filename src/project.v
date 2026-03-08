@@ -8,8 +8,11 @@
 module tt_um_pnauwela_ds0 (
     input  wire [7:0] ui_in,   // Dedicated inputs
     output wire [7:0] uo_out,  // Dedicated outputs
+	input  wire [7:0] uio,
+	output wire [7:0] uio_oe,
     input  wire       clk,     // clock
     input  wire       rst_n    // reset_n - low to reset
+	input  wire       ena
 );
 
 	//clk divider - 64kHz required
@@ -17,11 +20,14 @@ module tt_um_pnauwela_ds0 (
 	reg [8:0] clk_div;
 	reg 	  bit_tick;
 
+	assign uio = 8'b0;
+	assign uio_oe 8'b0;
+
 	always @(posedge clk or negedge rst_n) begin 
 		if (!rst_n) begin
 			clk_div <= 9'd0;
 			bit_tick <= 1'b0;
-		end else begin 
+		end else if (ena) begin 
 			//rough estimate, can't get exactly 64kHz from 25MHz
 			if (clk_div == 9'd389) begin
 				clk_div <= 9'd0;
