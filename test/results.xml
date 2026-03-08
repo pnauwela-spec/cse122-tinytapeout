@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1772591890" />
-    <testcase name="test_project" classname="test" file="/home/pieter-nauwelaerts/cse122-tinytapeout/test/test.py" lineno="9" time="0.0002105236053466797" sim_time_ns="0.0" ratio_time="0.0" />
+    <property name="random_seed" value="1772996903" />
+    <testcase name="test_project" classname="test" file="/home/pieter-nauwelaerts/cse122-tinytapeout/test/test.py" lineno="9" time="0.0007526874542236328" sim_time_ns="0.0" ratio_time="0.0" />
   </testsuite>
 </testsuites>
