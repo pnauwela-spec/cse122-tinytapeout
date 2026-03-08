@@ -23,7 +23,6 @@ module tt_um_pnauwela_ds0 (
 
 	assign uio_out = 8'b0;
 	assign uio_oe = 8'b0;
-	assign uio_in = 8'b0;
 
 	always @(posedge clk or negedge rst_n) begin 
 		if (!rst_n) begin
