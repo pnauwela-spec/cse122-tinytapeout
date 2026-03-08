@@ -11,7 +11,7 @@ module tt_um_pnauwela_ds0 (
 	input  wire [7:0] uio,
 	output wire [7:0] uio_oe,
     input  wire       clk,     // clock
-    input  wire       rst_n    // reset_n - low to reset
+    input  wire       rst_n,    // reset_n - low to reset
 	input  wire       ena
 );
 
