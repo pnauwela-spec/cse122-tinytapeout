@@ -68,8 +68,6 @@ module tb_ds0 ();
 		ui_in = 8'hA5;
 		ena = 1;
 		
-	 	uio_in = 8'b0;
-
 		repeat (5) @(posedge clk);
 		rst_n = 1;
 		

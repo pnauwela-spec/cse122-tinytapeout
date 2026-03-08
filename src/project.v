@@ -67,4 +67,6 @@ module tt_um_pnauwela_ds0 (
 		end
 	end
 
+	wire _unused = &{uio_in, 1'b0};
+
 endmodule
