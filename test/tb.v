@@ -15,8 +15,11 @@ module tb_ds0 ();
   // Wire up the inputs and outputs:
   	reg clk;
   	reg rst_n;
+	reg ena;
   	reg [7:0] ui_in;
   	wire [7:0] uo_out;
+	wire [7:0] uio_oe;
+	wire [7:0] uio;
 `ifdef GL_TEST
   	wire VPWR = 1'b1;
   	wire VGND = 1'b0;
@@ -36,8 +39,11 @@ module tb_ds0 ();
     	tt_um_pnauwela_ds0 dut (
         	.ui_in(ui_in),
         	.uo_out(uo_out),
+			.uio(uio),
+			.uio(uio_oe),
         	.clk(clk),
         	.rst_n(rst_n),
+			.ena(ena),
         	.VPWR(VPWR),
         	.VGND(VGND)
     );
@@ -45,6 +51,8 @@ module tb_ds0 ();
     	tt_um_pnauwela_ds0 dut (
         	.ui_in(ui_in),
         	.uo_out(uo_out),
+			.uio(uio),
+			.uio_oe(uio_oe),
         	.clk(clk),
         	.rst_n(rst_n)
     	);
@@ -55,6 +63,7 @@ module tb_ds0 ();
 
 		rst_n = 0;
 		ui_in = 8'hA5;
+		ena = 1;
 
 		repeat (5) @(posedge clk);
 		rst_n = 1;
